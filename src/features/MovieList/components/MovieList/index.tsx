@@ -1,11 +1,11 @@
 import { List } from "@mui/material";
 
 import { MovieListItem } from "../MovieListItem";
-import { Movies } from "../../types/type";
+import { Movie, Movies } from "../../types/type";
 
 type Props = {
   movies: Movies;
-  handleClick: () => void;
+  handleClick: (movie: Movie) => void;
 };
 
 export const MovieList = ({ movies, handleClick }: Props) => {

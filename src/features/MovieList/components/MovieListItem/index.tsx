@@ -3,14 +3,13 @@ import { Movie } from "../../types/type";
 
 type Props = {
   movie: Movie;
-  onClick: () => void;
+  onClick: (movie: Movie) => void;
 };
 
 const MovieListItem = ({ movie, onClick }: Props) => {
   return (
-    <ListItemButton onClick={onClick}>
+    <ListItemButton onClick={() => onClick(movie)}>
       <Typography>{movie.title}</Typography>
-      <Typography>{movie.synopsis}</Typography>
     </ListItemButton>
   );
 };
