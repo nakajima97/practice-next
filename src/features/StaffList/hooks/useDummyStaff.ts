@@ -1,6 +1,11 @@
 import { Staffs } from '../types/type'
 
 const useDummyStaff = () => {
+  /**
+   * ダミーのスタッフデータを取得する
+   * 
+   * @returns Staffs
+   */
   const fetchDummyStaff = () => {
     const nowDate = new Date()
 
