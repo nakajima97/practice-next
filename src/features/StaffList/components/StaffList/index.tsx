@@ -1,9 +1,12 @@
+"use client";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
+  TableSortLabel,
 } from "@mui/material";
 
 import { Staff, Staffs } from "../../types/type";
@@ -11,13 +14,34 @@ import { useDummyStaff } from "../../hooks/useDummyStaff";
 
 const StaffList = () => {
   const { fetchDummyStaff } = useDummyStaff();
-  const staffs: Staffs = fetchDummyStaff();
+  const [staffs, setStaffs] = useState<Staffs>(fetchDummyStaff());
+
+  const [order, setOrder] = useState<"asc" | "desc">("asc");
+
+  const sortStaffsByIdAsc = () =>
+    setStaffs(staffs.sort((a, b) => (a.id > b.id ? 1 : -1)));
+  const sortStaffsByIdDesc = () =>
+    setStaffs(staffs.sort((a, b) => (a.id < b.id ? 1 : -1)));
+
+  const handleSortById = () => {
+    if (order === "asc") {
+      sortStaffsByIdDesc();
+      setOrder("desc");
+    } else {
+      sortStaffsByIdAsc();
+      setOrder("asc");
+    }
+  };
 
   return (
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>ID</TableCell>
+          <TableCell>
+            <TableSortLabel active={true} onClick={handleSortById}>
+              ID
+            </TableSortLabel>
+          </TableCell>
           <TableCell>Name</TableCell>
           <TableCell>Entry Date</TableCell>
         </TableRow>
