@@ -12,7 +12,7 @@ import {
 import { Staff, Staffs } from "../../types/type";
 import { useDummyStaff } from "../../hooks/useDummyStaff";
 
-const StaffList = () => {
+const StaffListOnHTMLTable = () => {
   const { fetchDummyStaff } = useDummyStaff();
   const [staffs, setStaffs] = useState<Staffs>(fetchDummyStaff());
 
@@ -34,10 +34,10 @@ const StaffList = () => {
   };
 
   return (
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>
+    <table>
+      <thead>
+        <tr>
+          <th>
             <TableSortLabel
               active={true}
               onClick={handleSortById}
@@ -45,22 +45,22 @@ const StaffList = () => {
             >
               ID
             </TableSortLabel>
-          </TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Entry Date</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
+          </th>
+          <th>Name</th>
+          <th>Entry Date</th>
+        </tr>
+      </thead>
+      <tbody>
         {staffs.map((staff: Staff) => (
-          <TableRow key={staff.id}>
-            <TableCell>{staff.id}</TableCell>
-            <TableCell>{staff.name}</TableCell>
-            <TableCell>{staff.entryDate.toLocaleDateString()}</TableCell>
-          </TableRow>
+          <tr key={staff.id}>
+            <td>{staff.id}</td>
+            <td>{staff.name}</td>
+            <td>{staff.entryDate.toLocaleDateString()}</td>
+          </tr>
         ))}
-      </TableBody>
-    </Table>
+      </tbody>
+    </table>
   );
 };
 
-export { StaffList };
+export { StaffListOnHTMLTable };
