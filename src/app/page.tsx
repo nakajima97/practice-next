@@ -19,6 +19,12 @@ export default function Home() {
         </h2>
         <p>テーブルでのソートを試すためのページ</p>
       </div>
+      <div>
+        <h2>
+          <Link href="/navigation-bar">ナビゲーションバー</Link>
+        </h2>
+        <p>PCとSPで共通のナビゲーションバーを使うサンプル</p>
+      </div>
     </main>
   );
 }
