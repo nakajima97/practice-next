@@ -17,7 +17,7 @@ const NavigationBarPage = () => {
   return (
   <Box sx={{ width: 250, backgroundColor: 'lightgrey', height: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} role="presentation">
     <List>
-      {['Inbox', 'Starred', 'Send email'].map((text, index) => (
+      {['PC Only', 'Starred', 'Send email'].map((text, index) => (
         <ListItem key={text} disablePadding>
           <ListItemButton>
             <ListItemIcon>
