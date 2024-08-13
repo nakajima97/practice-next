@@ -12,6 +12,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 const NavigationBarPage = () => {
 	return (
@@ -27,16 +28,30 @@ const NavigationBarPage = () => {
 			role="presentation"
 		>
 			<List>
-				{['PC Only', 'Starred', 'Send email'].map((text, index) => (
-					<ListItem key={text} disablePadding>
+        <ListItem disablePadding>
 						<ListItemButton>
 							<ListItemIcon>
-								{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+								<InboxIcon />
 							</ListItemIcon>
-							<ListItemText primary={text} />
+							<ListItemText primary='PC Only' />
 						</ListItemButton>
 					</ListItem>
-				))}
+          <ListItem disablePadding>
+						<ListItemButton>
+							<ListItemIcon>
+								<MailIcon />}
+							</ListItemIcon>
+							<ListItemText primary='Starred' />
+						</ListItemButton>
+					</ListItem>
+          <ListItem disablePadding>
+						<ListItemButton>
+							<ListItemIcon>
+								<AccessAlarmIcon />
+							</ListItemIcon>
+							<ListItemText primary='Send email' />
+						</ListItemButton>
+					</ListItem>
 			</List>
 			<Divider />
 			<List>
