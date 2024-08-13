@@ -9,9 +9,9 @@ const NavigationBarPage = () => {
 	return (
 		<Box
 			sx={{
-				width: { xs: '100dvh', sm: 250 },
+				width: { xs: '100%', sm: 250 },
 				backgroundColor: 'lightgrey',
-				height: { xs: '600px', sm: '100dvh' },
+				height: { xs: 'auto', sm: '100dvh' },
 				display: 'flex',
 				flexDirection: { xs: 'row', sm: 'column' },
 				position: 'fixed',
@@ -27,7 +27,8 @@ const NavigationBarPage = () => {
 					display: 'flex',
 					flexDirection: { xs: 'row', sm: 'column' },
 					height: { xs: '60px', sm: '100%' },
-					width: '200px'
+					width: '100%',
+					justifyContent: { xs: 'space-between', sm: 'start' },
 				}}
 			>
 				<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
