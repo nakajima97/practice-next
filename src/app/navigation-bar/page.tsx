@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -14,35 +14,45 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 const NavigationBarPage = () => {
-  return (
-  <Box sx={{ width: 250, backgroundColor: 'lightgrey', height: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} role="presentation">
-    <List>
-      {['PC Only', 'Starred', 'Send email'].map((text, index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-    <Divider />
-    <List>
-      {['All mail', 'Trash'].map((text, index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-  </Box>
-  )
-}
+	return (
+		<Box
+			sx={{
+				width: 250,
+				backgroundColor: 'lightgrey',
+				height: '100dvh',
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'space-between',
+			}}
+			role="presentation"
+		>
+			<List>
+				{['PC Only', 'Starred', 'Send email'].map((text, index) => (
+					<ListItem key={text} disablePadding>
+						<ListItemButton>
+							<ListItemIcon>
+								{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+							</ListItemIcon>
+							<ListItemText primary={text} />
+						</ListItemButton>
+					</ListItem>
+				))}
+			</List>
+			<Divider />
+			<List>
+				{['All mail', 'Trash'].map((text, index) => (
+					<ListItem key={text} disablePadding>
+						<ListItemButton>
+							<ListItemIcon>
+								{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+							</ListItemIcon>
+							<ListItemText primary={text} />
+						</ListItemButton>
+					</ListItem>
+				))}
+			</List>
+		</Box>
+	);
+};
 
-export default NavigationBarPage
+export default NavigationBarPage;

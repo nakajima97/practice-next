@@ -1,7 +1,7 @@
 export type Staff = {
-  id: number
-  name: string
-  entryDate: Date
-}
+	id: number;
+	name: string;
+	entryDate: Date;
+};
 
-export type Staffs = Staff[]
+export type Staffs = Staff[];
