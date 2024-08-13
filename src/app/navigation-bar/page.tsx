@@ -15,9 +15,9 @@ import MailIcon from '@mui/icons-material/Mail';
 
 const NavigationBarPage = () => {
   return (
-  <Box sx={{ width: 250, backgroundColor: 'lightgrey', height: '100dvh' }} role="presentation">
+  <Box sx={{ width: 250, backgroundColor: 'lightgrey', height: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} role="presentation">
     <List>
-      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+      {['Inbox', 'Starred', 'Send email'].map((text, index) => (
         <ListItem key={text} disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -30,7 +30,7 @@ const NavigationBarPage = () => {
     </List>
     <Divider />
     <List>
-      {['All mail', 'Trash', 'Spam'].map((text, index) => (
+      {['All mail', 'Trash'].map((text, index) => (
         <ListItem key={text} disablePadding>
           <ListItemButton>
             <ListItemIcon>
