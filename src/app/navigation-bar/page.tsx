@@ -2,8 +2,6 @@
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -13,15 +11,20 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import { autocompleteClasses } from '@mui/material';
 
 const NavigationBarPage = () => {
 	return (
 		<Box
 			sx={{
-				width: 250,
+				width: {xs: '100dvh', sm: 250},
 				backgroundColor: 'lightgrey',
-				height: '100dvh',
+				height: {xs: '60px', sm: '100dvh'},
 				display: 'flex',
+				position: 'fixed',
+				top: {xs: 'auto', sm: 0},
+				left: 0,
+				bottom: {xs: 0, sm: 'auto'},
 				flexDirection: 'column',
 				justifyContent: 'space-between',
 			}}
@@ -39,7 +42,7 @@ const NavigationBarPage = () => {
           <ListItem disablePadding>
 						<ListItemButton>
 							<ListItemIcon>
-								<MailIcon />}
+								<MailIcon />
 							</ListItemIcon>
 							<ListItemText primary='Starred' />
 						</ListItemButton>
