@@ -31,7 +31,7 @@ const NavigationBarPage = () => {
 			role="presentation"
 		>
 			<List>
-        <ListItem disablePadding>
+        <ListItem disablePadding sx={{ display: {xs: 'none', md: 'block'} }}>
 						<ListItemButton>
 							<ListItemIcon>
 								<InboxIcon />
