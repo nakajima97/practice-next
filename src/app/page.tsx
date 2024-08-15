@@ -29,7 +29,7 @@ export default function Home() {
 				<h2>
 					<Link href="/navigation-bar-grid">ナビゲーションバー Grid</Link>
 				</h2>
-				<p>PCとSPで共通のナビゲーションバーを使うサンプル Gridレイアウト使ったver</p>
+				<p>PCとSPで共通のナビゲーションバーを使うサンプル Gridレイアウト使ったver ※未完成</p>
 			</div>
 		</main>
 	);
